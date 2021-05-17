@@ -1,6 +1,6 @@
 import React from "react";
 import {
-    BrowserRouter as Router,
+    BrowserRouter as BRouter,
     Route,
     Redirect,
     Switch,
@@ -10,8 +10,8 @@ import Home from "../routes/Home";
 import TV from "../routes/TVshows";
 import Search from "../routes/Search";
 
-export default () => (
-    <Router>
+const Router = () => (
+    <BRouter>
         <>
             <Header />
             <Switch>
@@ -21,7 +21,8 @@ export default () => (
                 <Redirect from="*" to="/" />
             </Switch>
         </>
-    </Router>
+    </BRouter>
 );
-
 // Redirect: 일치하는 url이 없을 경우 / 으로 보내 버림.
+
+export default Router;

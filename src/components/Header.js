@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Header = styled.header`
+const Sheader = styled.header`
     color: white;
     position: fixed;
     top: 0;
@@ -24,6 +24,8 @@ const Item = styled.li`
     width: 80px;
     height: 50px;
     text-align: center;
+    border-bottom: 5px solid
+        ${(props) => (props.current ? "#3498db" : "transparant")};
 `;
 
 const Slink = styled(Link)`
@@ -33,18 +35,20 @@ const Slink = styled(Link)`
     justify-content: center;
 `;
 
-export default () => (
-    <Header>
+const Header = () => (
+    <Sheader>
         <List>
-            <Item>
+            <Item current={true}>
                 <Slink to="/">Movies</Slink>
             </Item>
-            <Item>
+            <Item current={true}>
                 <Slink to="/tv">TV</Slink>
             </Item>
-            <Item>
+            <Item current={true}>
                 <Slink to="/search">Search</Slink>
             </Item>
         </List>
-    </Header>
+    </Sheader>
 );
+
+export default Header;
