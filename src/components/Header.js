@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
 const Sheader = styled.header`
@@ -26,6 +26,7 @@ const Item = styled.li`
     text-align: center;
     border-bottom: 5px solid
         ${(props) => (props.current ? "#3498db" : "transparant")};
+    transition: border-bottom 0.3s ease-in-out;
 `;
 
 const Slink = styled(Link)`
@@ -35,20 +36,21 @@ const Slink = styled(Link)`
     justify-content: center;
 `;
 
-const Header = () => (
+const Header = ({ location: { pathname } }) => (
     <Sheader>
         <List>
-            <Item current={true}>
+            <Item current={pathname === "/"}>
                 <Slink to="/">Movies</Slink>
             </Item>
-            <Item current={true}>
+            <Item current={pathname === "/tv"}>
                 <Slink to="/tv">TV</Slink>
             </Item>
-            <Item current={true}>
+            <Item current={pathname === "/search"}>
                 <Slink to="/search">Search</Slink>
             </Item>
         </List>
     </Sheader>
 );
 
-export default Header;
+// 어떤 컴포넌트와도 연결할 수 있는 withRouter?
+export default withRouter(Header);
