@@ -18,6 +18,13 @@ export const moviesApi = {
                 append_to_response: "videos",
             },
         }),
+    search: (term) =>
+        api.get("search/movie", {
+            params: {
+                // encodeURIComponent : 어떤 값을 넘기든 그 값을 인코딩하여, 완성된 문자열로 검색할 것임.
+                query: encodeURIComponent(term),
+            },
+        }),
 };
 
 export const tvApi = {
@@ -28,6 +35,13 @@ export const tvApi = {
         api.get(`tv/${id}`, {
             params: {
                 append_to_response: "videos",
+            },
+        }),
+    search: (term) =>
+        api.get("search/tv", {
+            params: {
+                // encodeURIComponent : 어떤 값을 넘기든 그 값을 인코딩하여, 완성된 문자열로 검색할 것임.
+                query: encodeURIComponent(term),
             },
         }),
 };
