@@ -12,8 +12,11 @@
 
 ## API Verbs
 
--   [ ] Now playing (Movie only)
--   [ ] Upcoming (Movies)
--   [ ] Top rated (TV, Movies)
--   [ ] Popular (TV, Movies)
--   [ ] Airing Today (TV)
+-   [x] Now playing (Movie only)
+-   [x] Upcoming (Movies)
+-   [x] Top rated (TV)
+-   [x] Popular (TV, Movies)
+-   [x] Airing Today (TV)
+-   [ ] TV show detail
+-   [ ] movie detail
+-   [ ] Search (not only movies but TV shows)
