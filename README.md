@@ -9,3 +9,11 @@
 -   [ ] TV shows
 -   [ ] Search
 -   [ ] Detail
+
+## API Verbs
+
+-   [ ] Now playing (Movie only)
+-   [ ] Upcoming (Movies)
+-   [ ] Top rated (TV, Movies)
+-   [ ] Popular (TV, Movies)
+-   [ ] Airing Today (TV)
