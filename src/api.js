@@ -22,6 +22,7 @@ export const moviesApi = {
         api.get("search/movie", {
             params: {
                 // encodeURIComponent : 어떤 값을 넘기든 그 값을 인코딩하여, 완성된 문자열로 검색할 것임.
+                // 검색이 안된다면, axios가 기본적으로 encode하고 있지 않은지 생각해볼 것.
                 query: encodeURIComponent(term),
             },
         }),
