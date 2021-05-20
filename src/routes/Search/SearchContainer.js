@@ -6,6 +6,7 @@ class SearchContainer extends React.Component {
         movieResults: null,
         tvResults: null,
         searchTerm: "",
+        // 사용자가 검색하기 전까지는 어느것도 로드하지 않음.
         loading: false,
         error: null,
     };

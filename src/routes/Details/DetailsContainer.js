@@ -3,6 +3,7 @@ import DetailsPresenter from "./DetailsPresenter";
 
 class DetailsContainer extends React.Component {
     state = {
+        // id를 가지고 결과를 보여줄 예정
         result: null,
         error: null,
         loading: true,
