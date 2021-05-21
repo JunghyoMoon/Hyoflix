@@ -17,10 +17,10 @@ class HomeContainer extends React.Component {
                 data: { results: nowPlaying },
             } = await moviesApi.nowPlaying();
             const {
-                data: { result: upcoming },
+                data: { results: upcoming },
             } = await moviesApi.upcoming();
             const {
-                data: { result: popular },
+                data: { results: popular },
             } = await moviesApi.popular();
             this.setState({
                 nowPlaying,
@@ -40,6 +40,7 @@ class HomeContainer extends React.Component {
 
     render() {
         const { nowPlaying, upcoming, popular, error, loading } = this.state;
+        console.log(this.state);
         return (
             <HomePresenter
                 nowPlaying={nowPlaying}
