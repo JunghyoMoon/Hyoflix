@@ -2,12 +2,18 @@ import React from "react";
 import DetailsPresenter from "./DetailsPresenter";
 
 class DetailsContainer extends React.Component {
-    state = {
-        // id를 가지고 결과를 보여줄 예정
-        result: null,
-        error: null,
-        loading: true,
-    };
+    constructor(props) {
+        super(props);
+        const {
+            location: { pathname },
+        } = props;
+        this.state = {
+            // id를 가지고 결과를 보여줄 예정
+            result: null,
+            error: null,
+            loading: true,
+        };
+    }
 
     async componentDidMount() {
         const {
@@ -16,9 +22,10 @@ class DetailsContainer extends React.Component {
             },
             history: { push },
         } = this.props;
+        this.isMovie = pathname.includes("/movie/");
         const parsedId = parseInt(id);
         if (isNaN(parsedId)) {
-            push("/");
+            return push("/");
         }
     }
 

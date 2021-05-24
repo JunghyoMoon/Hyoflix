@@ -20,7 +20,7 @@ const Router = () => (
                 <Route path="/tv" exact component={TV} />
                 <Route path="/search" component={Search} />
                 <Route path="/movie/:id" component={Details} />
-                <Route path="/show/:id" component={Details} />
+                <Route path="/tv/:id" component={Details} />
                 <Redirect from="*" to="/" />
             </Switch>
         </>
