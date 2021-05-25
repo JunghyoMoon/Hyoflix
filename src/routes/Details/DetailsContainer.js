@@ -1,4 +1,5 @@
 import React from "react";
+import { moviesApi, tvApi } from "../../api";
 import DetailsPresenter from "./DetailsPresenter";
 
 class DetailsContainer extends React.Component {
@@ -12,6 +13,7 @@ class DetailsContainer extends React.Component {
             result: null,
             error: null,
             loading: true,
+            isMovie: pathname.includes("/movie/"),
         };
     }
 
@@ -22,15 +24,28 @@ class DetailsContainer extends React.Component {
             },
             history: { push },
         } = this.props;
-        this.isMovie = pathname.includes("/movie/");
+        const { isMovie } = this.state;
         const parsedId = parseInt(id);
         if (isNaN(parsedId)) {
             return push("/");
         }
+        let result = null;
+        try {
+            if (isMovie) {
+                const request = await moviesApi.movieDetail(parsedId);
+                result = request.data;
+            } else {
+                const request = await tvApi.showDetail(parsedId);
+                result = request.data;
+            }
+            console.log(result);
+        } catch {
+            this.setState({ error: "Can't find anything." });
+        } finally {
+            this.setState({ loading: false, result });
+        }
     }
-
     render() {
-        console.log(this.props);
         const { result, error, loading } = this.state;
         return (
             <DetailsPresenter result={result} error={error} loading={loading} />
