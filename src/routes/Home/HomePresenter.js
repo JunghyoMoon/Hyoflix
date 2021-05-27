@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "../../components/Section";
 
 const Container = styled.div`
+    margin-top: 50px;
     padding: 0px 10px;
 `;
 
