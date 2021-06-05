@@ -29,7 +29,8 @@ class SearchContainer extends React.Component {
         }
     };
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault();
         const { searchTerm } = this.state;
         if (searchTerm !== "") {
             this.searchByTerm(searchTerm);

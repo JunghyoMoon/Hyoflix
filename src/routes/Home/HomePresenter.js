@@ -6,7 +6,7 @@ import Loader from "../../components/Loader";
 
 const Container = styled.div`
     margin-top: 50px;
-    padding: 0px 10px;
+    padding: 0px 20px;
 `;
 
 //데이터가 로딩 되었는지를 항상 확인할 것.
