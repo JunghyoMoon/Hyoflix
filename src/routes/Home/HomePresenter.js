@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Section from "../../Components/Section";
 import Loader from "../../Components/Loader";
-import Error from "../../Components/Error";
+import Message from "../../Components/Message";
 
 const Container = styled.div`
     margin-top: 50px;
@@ -37,7 +37,7 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) =>
                     ))}
                 </Section>
             )}
-            {error && <Error text={error} />}
+            {error && <Message text={error} color="#e74c3c" />}
         </Container>
     );
 
