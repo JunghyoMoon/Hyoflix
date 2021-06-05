@@ -22,6 +22,7 @@ const SearchPresenter = ({
     searchTerm,
     loading,
     handleSubmit,
+    updateTerm,
     error,
 }) => (
     <Container>
@@ -29,6 +30,7 @@ const SearchPresenter = ({
             <Input
                 placeholder="Search Movies or Shows..."
                 value={searchTerm}
+                onChange={updateTerm}
             ></Input>
         </Form>
     </Container>
@@ -40,6 +42,7 @@ SearchPresenter.propTypes = {
     searchTerm: PropTypes.string,
     loading: PropTypes.bool.isRequired,
     handleSubmit: PropTypes.func.isRequired,
+    updateTerm: PropTypes.func.isRequired,
     error: PropTypes.string,
 };
 

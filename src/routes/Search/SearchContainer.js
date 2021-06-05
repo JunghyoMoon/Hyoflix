@@ -29,6 +29,15 @@ class SearchContainer extends React.Component {
         }
     };
 
+    updateTerm = (event) => {
+        const {
+            target: { value },
+        } = event;
+        this.setState({
+            searchTerm: value,
+        });
+    };
+
     handleSubmit = (event) => {
         event.preventDefault();
         const { searchTerm } = this.state;
@@ -48,6 +57,7 @@ class SearchContainer extends React.Component {
                 loading={loading}
                 error={error}
                 handleSubmit={this.handleSubmit}
+                updateTerm={this.updateTerm}
             />
         );
     }
