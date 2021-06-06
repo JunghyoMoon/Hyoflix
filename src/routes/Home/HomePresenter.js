@@ -7,8 +7,7 @@ import Message from "../../Components/Message";
 import Poster from "../../Components/Poster";
 
 const Container = styled.div`
-    margin-top: 50px;
-    padding: 0px 20px;
+    padding: 20px;
 `;
 
 //데이터가 로딩 되었는지를 항상 확인할 것.
