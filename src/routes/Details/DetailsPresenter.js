@@ -40,6 +40,13 @@ const Cover = styled.div`
     border-radius: 5px;
 `;
 
+const Data = styled.div`
+    width: 70%;
+    margin-left: 10px;
+`;
+
+const Title = styled.div``;
+
 const DetailsPresenter = ({ result, error, loading }) =>
     loading ? (
         <Loader />
