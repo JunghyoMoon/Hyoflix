@@ -63,6 +63,8 @@ const DetailsPresenter = ({ result, error, loading }) =>
                             : require("../../assets/noPosterSmall.png")
                     }
                 />
+                <Title>{result.title}</Title>
+                <Data>{result.overview}</Data>
             </Content>
         </Container>
     );
