@@ -47,8 +47,13 @@ const Data = styled.div`
 
 const Title = styled.div``;
 
-const DetailsPresenter = ({ result, error, loading }) =>
-    loading ? (
+const Video = styled.iframe`
+    width: 250px;
+    height: 200px;
+`;
+
+const DetailsPresenter = ({ result, error, loading }) => {
+    return loading ? (
         <Loader />
     ) : (
         <Container>
@@ -68,6 +73,7 @@ const DetailsPresenter = ({ result, error, loading }) =>
             </Content>
         </Container>
     );
+};
 
 DetailsPresenter.propTypes = {
     result: PropTypes.object,
