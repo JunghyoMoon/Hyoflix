@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { symbol } from "prop-types";
 import styled from "styled-components";
 import Loader from "../../Components/Loader";
 
@@ -45,12 +45,32 @@ const Data = styled.div`
     margin-left: 10px;
 `;
 
-const Title = styled.div``;
+const Title = styled.h1`
+    font-size: 30px;
+    margin-bottom: 20px;
+`;
 
+const ItemContainer = styled.div`
+    display: flex;
+`;
+
+const Item = styled.span``;
+
+const Divider = styled.span`
+    margin: 0px 5px;
+`;
+
+const Overview = styled.p`
+    width: 50%;
+    line-height: 1.5;
+`;
+
+/*
 const Video = styled.iframe`
     width: 250px;
     height: 200px;
 `;
+*/
 
 const DetailsPresenter = ({ result, error, loading }) => {
     return loading ? (
@@ -68,8 +88,36 @@ const DetailsPresenter = ({ result, error, loading }) => {
                             : require("../../assets/noPosterSmall.png")
                     }
                 />
-                <Title>{result.title}</Title>
-                <Data>{result.overview}</Data>
+                <Data>
+                    <Title>
+                        {result.original_title
+                            ? result.original_title
+                            : result.original_name}
+                    </Title>
+                    <ItemContainer>
+                        <Item>
+                            {result.release_date
+                                ? result.release_date.substring(0, 4)
+                                : result.first_air_date.substring(0, 4)}
+                        </Item>
+                        <Divider>•</Divider>
+                        <Item>
+                            {result.runtime
+                                ? `${result.runtime} min`
+                                : `${result.episode_run_time[0]} min`}
+                        </Item>
+                        <Divider>•</Divider>
+                        <Item>
+                            {result.genres &&
+                                result.genres.map((genre, index) =>
+                                    index === result.genres.length - 1
+                                        ? genre.name
+                                        : `${genre.name} / `
+                                )}
+                        </Item>
+                    </ItemContainer>
+                    <Overview>{result.overview}</Overview>
+                </Data>
             </Content>
         </Container>
     );
