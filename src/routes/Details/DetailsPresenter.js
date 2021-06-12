@@ -47,6 +47,11 @@ const Data = styled.div`
 
 const Title = styled.h1`
     font-size: 30px;
+    margin-bottom: 10px;
+`;
+
+const Rate = styled.h3`
+    font-size: 16px;
     margin-bottom: 20px;
 `;
 
@@ -72,6 +77,12 @@ const Video = styled.iframe`
 `;
 */
 
+const stars = (rate) => {
+    const intRate = parseInt(rate / 2);
+    const others = 5 - intRate;
+    return `${"★".repeat(intRate)}${"☆".repeat(others)}`;
+};
+
 const DetailsPresenter = ({ result, error, loading }) => {
     return loading ? (
         <Loader />
@@ -94,6 +105,9 @@ const DetailsPresenter = ({ result, error, loading }) => {
                             ? result.original_title
                             : result.original_name}
                     </Title>
+                    <Rate>{`${result.vote_average} ${stars(
+                        result.vote_average
+                    )}`}</Rate>
                     <ItemContainer>
                         <Item>
                             {result.release_date
