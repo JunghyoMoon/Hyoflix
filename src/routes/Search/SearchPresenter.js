@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Helmet from "react-helmet";
 import Loader from "../../Components/Loader";
 import Section from "../../Components/Section";
 import Message from "../../Components/Message";
@@ -30,6 +31,9 @@ const SearchPresenter = ({
     error,
 }) => (
     <Container>
+        <Helmet>
+            <title>Search | Hyoflix</title>
+        </Helmet>
         <Form onSubmit={handleSubmit}>
             <Input
                 placeholder="Search Movies or Shows..."
@@ -38,7 +42,12 @@ const SearchPresenter = ({
             ></Input>
         </Form>
         {loading ? (
-            <Loader />
+            <>
+                <Helmet>
+                    <title>Loading... | Hyoflix</title>
+                </Helmet>
+                <Loader />
+            </>
         ) : (
             <>
                 {movieResults && movieResults.length > 0 && (

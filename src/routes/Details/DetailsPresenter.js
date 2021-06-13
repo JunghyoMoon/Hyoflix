@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes, { symbol } from "prop-types";
 import styled from "styled-components";
+import Helmet from "react-helmet";
 import Loader from "../../Components/Loader";
 
 const Container = styled.div`
@@ -46,20 +47,24 @@ const Data = styled.div`
 `;
 
 const Title = styled.h1`
-    font-size: 30px;
+    font-size: 40px;
     margin-bottom: 10px;
 `;
 
 const Rate = styled.h3`
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 30px;
 `;
 
 const ItemContainer = styled.div`
     display: flex;
+    margin-bottom: 15px;
 `;
 
-const Item = styled.span``;
+const Item = styled.span`
+    font-size: 15px;
+    font-weight: 400;
+`;
 
 const Divider = styled.span`
     margin: 0px 5px;
@@ -85,9 +90,22 @@ const stars = (rate) => {
 
 const DetailsPresenter = ({ result, error, loading }) => {
     return loading ? (
-        <Loader />
+        <>
+            <Helmet>
+                <title>Loading... | Hyoflix</title>
+            </Helmet>
+            <Loader />
+        </>
     ) : (
         <Container>
+            <Helmet>
+                <title>
+                    {result.original_title
+                        ? result.original_title
+                        : result.original_name}
+                    | Hyofilx
+                </title>
+            </Helmet>
             <Backdrop
                 bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
             />

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Helmet from "react-helmet";
 import Section from "../../Components/Section";
 import Loader from "../../Components/Loader";
 import Message from "../../Components/Message";
@@ -13,9 +14,17 @@ const Container = styled.div`
 //데이터가 로딩 되었는지를 항상 확인할 것.
 const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) =>
     loading ? (
-        <Loader />
+        <>
+            <Helmet>
+                <title>Loading... | Hyoflix</title>
+            </Helmet>
+            <Loader />
+        </>
     ) : (
         <Container>
+            <Helmet>
+                <title>Movies | Hyofilx</title>
+            </Helmet>
             {nowPlaying && nowPlaying.length > 0 && (
                 <Section title="Now Playing">
                     {nowPlaying.map((movie) => (

@@ -5,10 +5,10 @@
 
 ## Screens
 
--   [ ] Home
--   [ ] TV shows
--   [ ] Search
--   [ ] Detail
+-   [x] Home
+-   [x] TV shows
+-   [x] Search
+-   [x] Detail
 
 ## API Verbs
 
@@ -17,6 +17,17 @@
 -   [x] Top rated (TV)
 -   [x] Popular (TV, Movies)
 -   [x] Airing Today (TV)
--   [ ] TV show detail
--   [ ] movie detail
--   [ ] Search (not only movies but TV shows)
+-   [x] TV show detail
+-   [x] movie detail
+-   [x] Search (not only movies but TV shows)
+
+all done!
+
+### Challenges
+
+-   [ ] IMDB Link
+-   [ ] Tabs inside of Movie / Show Details (YT Videos, Production companies)
+-   [ ] Collections Link
+-   [ ] /collections router?
+-   [ ] seasons: for TV shows..
+-   [ ] creators of each TV show
