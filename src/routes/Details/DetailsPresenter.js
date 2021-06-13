@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes, { symbol } from "prop-types";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 import Loader from "../../Components/Loader";
@@ -64,6 +64,16 @@ const ItemContainer = styled.div`
 const Item = styled.span`
     font-size: 15px;
     font-weight: 400;
+    a {
+        &:hover {
+            opacity: 0.6;
+        }
+        transition: opacity 0.1s ease-in-out;
+    }
+    img {
+        width: 30px;
+        height: 23px;
+    }
 `;
 
 const Divider = styled.span`
@@ -88,7 +98,7 @@ const stars = (rate) => {
     return `${"★".repeat(intRate)}${"☆".repeat(others)}`;
 };
 
-const DetailsPresenter = ({ result, error, loading }) => {
+const DetailsPresenter = ({ result, error, loading, isMovie }) => {
     return loading ? (
         <>
             <Helmet>
@@ -103,7 +113,7 @@ const DetailsPresenter = ({ result, error, loading }) => {
                     {result.original_title
                         ? result.original_title
                         : result.original_name}
-                    | Hyofilx
+                    &#32; | Hyofilx
                 </title>
             </Helmet>
             <Backdrop
@@ -146,6 +156,23 @@ const DetailsPresenter = ({ result, error, loading }) => {
                                         ? genre.name
                                         : `${genre.name} / `
                                 )}
+                        </Item>
+                        <Divider>•</Divider>
+                        <Item>
+                            {isMovie ? (
+                                <a
+                                    href={`https://www.imdb.com/title/${result.imdb_id}`}
+                                >
+                                    <img
+                                        src="https://cdn0.iconfinder.com/data/icons/social-media-logo-4/32/Social_Media_imdb-512.png"
+                                        alt="IMDB"
+                                    />
+                                </a>
+                            ) : (
+                                <a href={result.homepage}>
+                                    <span>Homepage</span>
+                                </a>
+                            )}
                         </Item>
                     </ItemContainer>
                     <Overview>{result.overview}</Overview>
