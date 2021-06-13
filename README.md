@@ -25,8 +25,8 @@ all done!
 
 ### Challenges
 
--   [ ] IMDB Link
--   [ ] Tabs inside of Movie / Show Details (YT Videos, Production companies)
+-   [x] IMDB Link
+-   [x] embad trailers
 -   [ ] Collections Link
 -   [ ] /collections router?
 -   [ ] seasons: for TV shows..

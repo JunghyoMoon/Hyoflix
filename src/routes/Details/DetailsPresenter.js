@@ -85,12 +85,9 @@ const Overview = styled.p`
     line-height: 1.5;
 `;
 
-/*
-const Video = styled.iframe`
-    width: 250px;
-    height: 200px;
-`;
-*/
+const VideoContainer = styled.div``;
+
+const Video = styled.iframe``;
 
 const stars = (rate) => {
     const intRate = parseInt(rate / 2);
@@ -176,6 +173,17 @@ const DetailsPresenter = ({ result, error, loading, isMovie }) => {
                         </Item>
                     </ItemContainer>
                     <Overview>{result.overview}</Overview>
+                    <VideoContainer>
+                        {result.videos.results.map(
+                            (movie, index) =>
+                                index <= 2 && (
+                                    <Video
+                                        key={movie.id}
+                                        src={`https://www.youtube.com/embed/${movie.key}`}
+                                    />
+                                )
+                        )}
+                    </VideoContainer>
                 </Data>
             </Content>
         </Container>
@@ -186,6 +194,7 @@ DetailsPresenter.propTypes = {
     result: PropTypes.object,
     error: PropTypes.string,
     loading: PropTypes.bool.isRequired,
+    isMovie: PropTypes.bool.isRequired,
 };
 
 export default DetailsPresenter;
