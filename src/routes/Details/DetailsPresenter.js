@@ -85,9 +85,19 @@ const Overview = styled.p`
     line-height: 1.5;
 `;
 
-const VideoContainer = styled.div``;
+const VideoContainer = styled.div`
+    margin-top: 5%;
+    width: 100%;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(3, 320px);
+    grid-template-rows: 180px;
+`;
 
-const Video = styled.iframe``;
+const Video = styled.iframe`
+    width: 100%;
+    height: 100%;
+`;
 
 const stars = (rate) => {
     const intRate = parseInt(rate / 2);
