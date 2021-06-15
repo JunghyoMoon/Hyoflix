@@ -104,6 +104,11 @@ const Video = styled.iframe`
 const SeasonsList = styled.div`
     display: flex;
     margin-top: 30px;
+    width: 80%;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 const Season = styled.div`
