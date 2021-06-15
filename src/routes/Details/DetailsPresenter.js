@@ -106,6 +106,9 @@ const SeasonsList = styled.div`
     margin-top: 30px;
     width: 80%;
     overflow-y: hidden;
+    // hide scrollbar
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     &::-webkit-scrollbar {
         display: none;
     }
@@ -129,6 +132,14 @@ const Season = styled.div`
     span {
         font-size: 13px;
         font-weight: 400;
+    }
+`;
+
+const Companies = styled.div`
+    display: flex;
+
+    img {
+        scale: 10%;
     }
 `;
 
@@ -216,6 +227,17 @@ const DetailsPresenter = ({ result, error, loading, isMovie }) => {
                             )}
                         </Item>
                     </ItemContainer>
+                    <Companies>
+                        {result.production_companies.map(
+                            (company) =>
+                                company.logo_path && (
+                                    <img
+                                        src={`https://image.tmdb.org/t/p/w300${company.logo_path}`}
+                                        alt={company.name}
+                                    />
+                                )
+                        )}
+                    </Companies>
                     <Overview>{result.overview}</Overview>
                     <VideoContainer>
                         {result.videos
