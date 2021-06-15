@@ -29,5 +29,5 @@ all done!
 -   [x] embad trailers
 -   [ ] Collections Link
 -   [ ] /collections router?
--   [ ] seasons: for TV shows..
+-   [x] seasons: for TV shows..
 -   [ ] creators of each TV show

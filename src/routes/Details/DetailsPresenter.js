@@ -64,6 +64,7 @@ const ItemContainer = styled.div`
 const Item = styled.span`
     font-size: 15px;
     font-weight: 400;
+    text-align: center;
     a {
         &:hover {
             opacity: 0.6;
@@ -78,6 +79,7 @@ const Item = styled.span`
 
 const Divider = styled.span`
     margin: 0px 5px;
+    text-align: center;
 `;
 
 const Overview = styled.p`
@@ -97,6 +99,32 @@ const VideoContainer = styled.div`
 const Video = styled.iframe`
     width: 100%;
     height: 100%;
+`;
+
+const SeasonsList = styled.div`
+    display: flex;
+    margin-top: 30px;
+`;
+
+const Season = styled.div`
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:first-child {
+        margin-left: 0px;
+    }
+    img {
+        width: 100px;
+        height: 150px;
+        border-radius: 3px;
+        margin-bottom: 6px;
+    }
+    span {
+        font-size: 13px;
+        font-weight: 400;
+    }
 `;
 
 const stars = (rate) => {
@@ -191,12 +219,30 @@ const DetailsPresenter = ({ result, error, loading, isMovie }) => {
                                       index <= 2 && (
                                           <Video
                                               key={movie.id}
+                                              // how to use fullscreen?
                                               src={`https://www.youtube.com/embed/${movie.key}`}
                                           />
                                       )
                               )
                             : null}
                     </VideoContainer>
+                    <SeasonsList>
+                        {result.seasons
+                            ? result.seasons.map((season) => (
+                                  <Season>
+                                      <img
+                                          src={
+                                              season.poster_path
+                                                  ? `https://image.tmdb.org/t/p/w300${season.poster_path}`
+                                                  : require("../../assets/noPosterSmall.png")
+                                          }
+                                          alt={season.season_number}
+                                      ></img>
+                                      <span>{`season ${season.season_number}`}</span>
+                                  </Season>
+                              ))
+                            : null}
+                    </SeasonsList>
                 </Data>
             </Content>
         </Container>
