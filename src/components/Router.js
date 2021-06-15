@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Header from "../Components/Header";
 import Home from "../Routes/Home";
-import TV from "../Routes/TVshows";
+import TVshows from "../Routes/TVshows";
 import Search from "../Routes/Search";
 import Details from "../Routes/Details";
 
@@ -17,7 +17,7 @@ const Router = () => (
             <Header />
             <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/tv" exact component={TV} />
+                <Route path="/tv" exact component={TVshows} />
                 <Route path="/search" component={Search} />
                 <Route path="/movie/:id" component={Details} />
                 <Route path="/tv/:id" component={Details} />
