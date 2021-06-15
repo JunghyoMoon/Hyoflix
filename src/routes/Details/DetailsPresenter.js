@@ -117,10 +117,11 @@ const DetailsPresenter = ({ result, error, loading, isMovie }) => {
         <Container>
             <Helmet>
                 <title>
-                    {result.original_title
-                        ? result.original_title
-                        : result.original_name}
-                    &#32; | Hyofilx
+                    {`${
+                        result.original_title
+                            ? result.original_title
+                            : result.original_name
+                    } | Hyofilx`}
                 </title>
             </Helmet>
             <Backdrop
@@ -184,15 +185,17 @@ const DetailsPresenter = ({ result, error, loading, isMovie }) => {
                     </ItemContainer>
                     <Overview>{result.overview}</Overview>
                     <VideoContainer>
-                        {result.videos.results.map(
-                            (movie, index) =>
-                                index <= 2 && (
-                                    <Video
-                                        key={movie.id}
-                                        src={`https://www.youtube.com/embed/${movie.key}`}
-                                    />
-                                )
-                        )}
+                        {result.videos
+                            ? result.videos.results.map(
+                                  (movie, index) =>
+                                      index <= 2 && (
+                                          <Video
+                                              key={movie.id}
+                                              src={`https://www.youtube.com/embed/${movie.key}`}
+                                          />
+                                      )
+                              )
+                            : null}
                     </VideoContainer>
                 </Data>
             </Content>
