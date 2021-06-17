@@ -137,8 +137,10 @@ const Season = styled.div`
 
 const Companies = styled.div`
     display: flex;
+    align-items: center;
     margin: 20px 0px;
     img {
+        height: min-content;
         width: 70px;
         margin-left: 15px;
         &:first-child {
@@ -264,7 +266,8 @@ const DetailsPresenter = ({ result, error, loading, isMovie }) => {
                                   <Season>
                                       <img
                                           src={
-                                              season.poster_path
+                                              season.poster_path &&
+                                              season.poster_path !== null
                                                   ? `https://image.tmdb.org/t/p/w300${season.poster_path}`
                                                   : require("../../assets/noPosterSmall.png")
                                           }
