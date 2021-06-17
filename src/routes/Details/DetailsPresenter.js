@@ -137,9 +137,13 @@ const Season = styled.div`
 
 const Companies = styled.div`
     display: flex;
-
+    margin: 20px 0px;
     img {
-        scale: 10%;
+        width: 70px;
+        margin-left: 15px;
+        &:first-child {
+            margin-left: 0px;
+        }
     }
 `;
 
@@ -248,6 +252,7 @@ const DetailsPresenter = ({ result, error, loading, isMovie }) => {
                                               key={movie.id}
                                               // how to use fullscreen?
                                               src={`https://www.youtube.com/embed/${movie.key}`}
+                                              allowFullScreen
                                           />
                                       )
                               )
