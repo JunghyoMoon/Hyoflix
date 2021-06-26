@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/hyoflix/static/js/main.d0f6baab.chunk.js",
-    "main.js.map": "/hyoflix/static/js/main.d0f6baab.chunk.js.map",
-    "runtime-main.js": "/hyoflix/static/js/runtime-main.1487e6b8.js",
-    "runtime-main.js.map": "/hyoflix/static/js/runtime-main.1487e6b8.js.map",
-    "static/js/2.b8162e70.chunk.js": "/hyoflix/static/js/2.b8162e70.chunk.js",
-    "static/js/2.b8162e70.chunk.js.map": "/hyoflix/static/js/2.b8162e70.chunk.js.map",
-    "index.html": "/hyoflix/index.html",
-    "static/js/2.b8162e70.chunk.js.LICENSE.txt": "/hyoflix/static/js/2.b8162e70.chunk.js.LICENSE.txt",
-    "static/media/noPosterSmall.png": "/hyoflix/static/media/noPosterSmall.6a1c6526.png"
+    "main.js": "/Hyoflix/static/js/main.d0f6baab.chunk.js",
+    "main.js.map": "/Hyoflix/static/js/main.d0f6baab.chunk.js.map",
+    "runtime-main.js": "/Hyoflix/static/js/runtime-main.ed1b9034.js",
+    "runtime-main.js.map": "/Hyoflix/static/js/runtime-main.ed1b9034.js.map",
+    "static/js/2.cbb7d585.chunk.js": "/Hyoflix/static/js/2.cbb7d585.chunk.js",
+    "static/js/2.cbb7d585.chunk.js.map": "/Hyoflix/static/js/2.cbb7d585.chunk.js.map",
+    "index.html": "/Hyoflix/index.html",
+    "static/js/2.cbb7d585.chunk.js.LICENSE.txt": "/Hyoflix/static/js/2.cbb7d585.chunk.js.LICENSE.txt",
+    "static/media/noPosterSmall.png": "/Hyoflix/static/media/noPosterSmall.6a1c6526.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1487e6b8.js",
-    "static/js/2.b8162e70.chunk.js",
+    "static/js/runtime-main.ed1b9034.js",
+    "static/js/2.cbb7d585.chunk.js",
     "static/js/main.d0f6baab.chunk.js"
   ]
 }
