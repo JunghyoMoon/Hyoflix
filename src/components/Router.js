@@ -16,11 +16,28 @@ const Router = () => (
         <>
             <Header />
             <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/tv" exact component={TVshows} />
-                <Route path="/search" component={Search} />
-                <Route path="/movie/:id" component={Details} />
-                <Route path="/tv/:id" component={Details} />
+                <Route
+                    path="https://junghyomoon.github.io/Hyoflix/"
+                    exact
+                    component={Home}
+                />
+                <Route
+                    path="https://junghyomoon.github.io/Hyoflix/tv"
+                    exact
+                    component={TVshows}
+                />
+                <Route
+                    path="https://junghyomoon.github.io/Hyoflix/search"
+                    component={Search}
+                />
+                <Route
+                    path="https://junghyomoon.github.io/Hyoflix/movie/:id"
+                    component={Details}
+                />
+                <Route
+                    path="https://junghyomoon.github.io/Hyoflix/tv/:id"
+                    component={Details}
+                />
                 <Redirect from="*" to="/" />
             </Switch>
         </>

@@ -30,4 +30,4 @@ all done!
 -   [ ] Collections Link
 -   [ ] /collections router?
 -   [x] seasons: for TV shows..
--   [ ] creators of each TV show
+-   [x] creators of each TV show

@@ -252,7 +252,6 @@ const DetailsPresenter = ({ result, error, loading, isMovie }) => {
                                       index <= 2 && (
                                           <Video
                                               key={movie.id}
-                                              // how to use fullscreen?
                                               src={`https://www.youtube.com/embed/${movie.key}`}
                                               allowFullScreen
                                           />
