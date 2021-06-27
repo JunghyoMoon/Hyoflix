@@ -11,34 +11,19 @@ import TVshows from "../Routes/TVshows";
 import Search from "../Routes/Search";
 import Details from "../Routes/Details";
 
+const baseUrl = "https://junghyomoon.github.io/Hyoflix";
+
 const Router = () => (
     <BRouter>
         <>
             <Header />
             <Switch>
-                <Route
-                    path="https://junghyomoon.github.io/Hyoflix/"
-                    exact
-                    component={Home}
-                />
-                <Route
-                    path="https://junghyomoon.github.io/Hyoflix/tv"
-                    exact
-                    component={TVshows}
-                />
-                <Route
-                    path="https://junghyomoon.github.io/Hyoflix/search"
-                    component={Search}
-                />
-                <Route
-                    path="https://junghyomoon.github.io/Hyoflix/movie/:id"
-                    component={Details}
-                />
-                <Route
-                    path="https://junghyomoon.github.io/Hyoflix/tv/:id"
-                    component={Details}
-                />
-                <Redirect from="*" to="/" />
+                <Route path={`${baseUrl}/`} exact component={Home} />
+                <Route path={`${baseUrl}/tv`} exact component={TVshows} />
+                <Route path={`${baseUrl}/search`} component={Search} />
+                <Route path={`${baseUrl}/movie/:id`} component={Details} />
+                <Route path={`${baseUrl}/tv/:id`} component={Details} />
+                <Redirect from="*" to={`${baseUrl}/`} />
             </Switch>
         </>
     </BRouter>
