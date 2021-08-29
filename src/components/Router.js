@@ -1,6 +1,6 @@
 import React from "react";
 import {
-    BrowserRouter as BRouter,
+    HashRouter as HRouter,
     Route,
     Redirect,
     Switch,
@@ -14,19 +14,19 @@ import Details from "../Routes/Details";
 const baseUrl = "https://junghyomoon.github.io/Hyoflix";
 
 const Router = () => (
-    <BRouter>
+    <HRouter>
         <>
             <Header />
             <Switch>
-                <Route path={`${baseUrl}/`} exact component={Home} />
-                <Route path={`${baseUrl}/tv`} exact component={TVshows} />
-                <Route path={`${baseUrl}/search`} component={Search} />
-                <Route path={`${baseUrl}/movie/:id`} component={Details} />
-                <Route path={`${baseUrl}/tv/:id`} component={Details} />
-                <Redirect from="*" to={`${baseUrl}/`} />
+                <Route path={`/`} exact component={Home} />
+                <Route path={`/tv`} exact component={TVshows} />
+                <Route path={`/search`} component={Search} />
+                <Route path={`/movie/:id`} component={Details} />
+                <Route path={`/tv/:id`} component={Details} />
+                <Redirect from="*" to={`/`} />
             </Switch>
         </>
-    </BRouter>
+    </HRouter>
 );
 // Redirect: 일치하는 url이 없을 경우 / 으로 보내 버림.
 

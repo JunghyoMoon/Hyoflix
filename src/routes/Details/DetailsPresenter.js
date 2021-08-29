@@ -59,6 +59,8 @@ const Rate = styled.h3`
 const ItemContainer = styled.div`
     display: flex;
     margin-bottom: 15px;
+    font-size: 15px;
+    text-align: center;
 `;
 
 const Item = styled.span`
@@ -75,6 +77,13 @@ const Item = styled.span`
         width: 30px;
         height: 23px;
     }
+`;
+
+const Country = styled.span`
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0px 10px;
 `;
 
 const Divider = styled.span`
@@ -220,6 +229,8 @@ const DetailsPresenter = ({ result, error, loading, isMovie }) => {
                             {isMovie ? (
                                 <a
                                     href={`https://www.imdb.com/title/${result.imdb_id}`}
+                                    rel="noreferrer"
+                                    target="_blank"
                                 >
                                     <img
                                         src="https://cdn0.iconfinder.com/data/icons/social-media-logo-4/32/Social_Media_imdb-512.png"
@@ -232,6 +243,18 @@ const DetailsPresenter = ({ result, error, loading, isMovie }) => {
                                 </a>
                             )}
                         </Item>
+                    </ItemContainer>
+                    <ItemContainer>
+                        production countries:{`     `}
+                        {result.production_countries
+                            ? result.production_countries.map(
+                                  (country, index) =>
+                                      index ===
+                                      result.production_countries.length - 1
+                                          ? country.name
+                                          : `${country.name} / `
+                              )
+                            : "??"}
                     </ItemContainer>
                     <Companies>
                         {result.production_companies.map(

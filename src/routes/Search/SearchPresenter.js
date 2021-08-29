@@ -8,16 +8,23 @@ import Message from "../../Components/Message";
 import Poster from "../../Components/Poster";
 
 const Container = styled.div`
+    width: 100%;
     padding: 0px 20px;
 `;
 
 const Form = styled.form`
+    width: 100%;
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 50px;
 `;
 
 const Input = styled.input`
     all: unset;
-    width: 100%;
+    width: 30%;
+    border-bottom: 1px solid white;
     font-size: 28px;
 `;
 
