@@ -58,6 +58,7 @@ const Rate = styled.h3`
 
 const ItemContainer = styled.div`
     display: flex;
+    align-items: center;
     margin-bottom: 15px;
     font-size: 15px;
     text-align: center;
@@ -72,10 +73,16 @@ const Item = styled.span`
             opacity: 0.6;
         }
         transition: opacity 0.1s ease-in-out;
+
+        img {
+            width: 60px;
+            height: 50px;
+        }
     }
     img {
-        width: 30px;
-        height: 23px;
+        width: 40px;
+        height: 40px;
+        align-self: center;
     }
 `;
 
@@ -233,7 +240,7 @@ const DetailsPresenter = ({ result, error, loading, isMovie }) => {
                                     target="_blank"
                                 >
                                     <img
-                                        src="https://cdn0.iconfinder.com/data/icons/social-media-logo-4/32/Social_Media_imdb-512.png"
+                                        src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ficons.iconarchive.com%2Ficons%2Fuiconstock%2Fsocialmedia%2F512%2FIMDb-icon.png&f=1&nofb=1"
                                         alt="IMDB"
                                     />
                                 </a>
