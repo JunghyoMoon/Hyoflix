@@ -233,7 +233,7 @@ const DetailsPresenter = ({ result, error, loading, isMovie }) => {
                         </Item>
                         <Divider>•</Divider>
                         <Item>
-                            {isMovie ? (
+                            {result.imdb_id ? (
                                 <a
                                     href={`https://www.imdb.com/title/${result.imdb_id}`}
                                     rel="noreferrer"
