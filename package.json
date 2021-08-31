@@ -27,7 +27,7 @@
         "deploy": "gh-pages -d build",
         "predeploy": "yarn build"
     },
-    "homepage": "https://junghyomoon.github.io/Hyoflix",
+    "homepage": "https://elated-lumiere-4ca689.netlify.app",
     "eslintConfig": {
         "extends": [
             "react-app",
