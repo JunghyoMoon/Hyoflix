@@ -11,8 +11,6 @@ import TVshows from "../routes/TVshows";
 import Search from "../routes/Search";
 import Details from "../routes/Details";
 
-const baseUrl = "https://junghyomoon.github.io/Hyoflix";
-
 const Router = () => (
     <HRouter>
         <>

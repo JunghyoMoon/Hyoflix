@@ -86,13 +86,6 @@ const Item = styled.span`
     }
 `;
 
-const Country = styled.span`
-    font-size: 15px;
-    font-weight: 400;
-    text-align: center;
-    margin: 0px 10px;
-`;
-
 const Divider = styled.span`
     margin: 0px 5px;
     text-align: center;
