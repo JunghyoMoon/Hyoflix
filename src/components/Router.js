@@ -5,11 +5,11 @@ import {
     Redirect,
     Switch,
 } from "react-router-dom";
-import Header from "../Components/Header";
-import Home from "../Routes/Home";
-import TVshows from "../Routes/TVshows";
-import Search from "../Routes/Search";
-import Details from "../Routes/Details";
+import Header from "./Header";
+import Home from "../routes/Home";
+import TVshows from "../routes/TVshows";
+import Search from "../routes/Search";
+import Details from "../routes/Details";
 
 const baseUrl = "https://junghyomoon.github.io/Hyoflix";
 
